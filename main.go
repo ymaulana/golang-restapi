@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"math/rand"
 	"net/http"
@@ -94,9 +93,9 @@ func main() {
 	r := mux.NewRouter()
 
 	// Mock Data - @todo - implement DB
-	books = append(books, Book{ID: "1", Isbn: "448743", Title: "Book One", Author: &Author{Firstname: "Wahyae", Lastname: "Parlonte"}})
-	books = append(books, Book{ID: "2", Isbn: "891241", Title: "Book Two", Author: &Author{Firstname: "Kipa", Lastname: "Copo"}})
-	books = append(books, Book{ID: "3", Isbn: "478718", Title: "Book Tree", Author: &Author{Firstname: "Zipa", Lastname: "Zuzuzu"}})
+	books = append(books, Book{ID: "1", Isbn: "448743", Title: "Book One", Author: &Author{Firstname: "Wahyudi", Lastname: "Atkinson"}})
+	books = append(books, Book{ID: "2", Isbn: "891241", Title: "Book Two", Author: &Author{Firstname: "Miatun", Lastname: "Malvoka"}})
+	books = append(books, Book{ID: "3", Isbn: "478718", Title: "Book Tree", Author: &Author{Firstname: "Junaedi", Lastname: "Robinson"}})
 
 	//Route Handlers / Endpoints
 	r.HandleFunc("/api/books", getBooks).Methods("GET")
@@ -107,5 +106,4 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":8000", r))
 
-	fmt.Println("parlonte")
 }
